@@ -4,8 +4,7 @@ import { Router } from "preact-router";
 function MainPage() {
 	console.log("rdsd");
 	return <div>
-		<p><a href="/test">To hashtest (root-relative)</a></p>
-		<p><a href="./test">To hashtest (relative)</a></p>
+		<p><a href="/hashtest">To hashtest (root-relative)</a></p>
 	</div>;
 }
 
@@ -14,8 +13,8 @@ class TestPage extends Component {
 		return <div>
 			<p>hash is {state.hash}</p>
 			<p><a href="#something">Hash Link</a></p>
-			<p><a href="./test#third">Relative link</a></p>
-			<p><a href="/test#another">Root-relative link</a></p>
+			<p><a href="./hashtest#third">Relative link</a></p>
+			<p><a href="/hashtest#another">Root-relative link</a></p>
 		</div>;
 	}
 
@@ -32,7 +31,7 @@ class TestPage extends Component {
 function App() {
 	return <Router>
 		<MainPage path="/" />
-		<TestPage path="/test" />
+		<TestPage path="/hashtest" />
 		<div default>Not Found</div>
 	</Router>;
 }

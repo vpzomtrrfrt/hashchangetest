@@ -3,7 +3,10 @@ import { Router } from "preact-router";
 
 function MainPage() {
 	console.log("rdsd");
-	return <a href="/test">To hashtest</a>;
+	return <div>
+		<p><a href="/test">To hashtest (root-relative)</a></p>
+		<p><a href="./test">To hashtest (relative)</a></p>
+	</div>;
 }
 
 class TestPage extends Component {
@@ -11,7 +14,7 @@ class TestPage extends Component {
 		return <div>
 			<p>hash is {state.hash}</p>
 			<p><a href="#something">Hash Link</a></p>
-			<p><a href="test#third">Relative link</a></p>
+			<p><a href="./test#third">Relative link</a></p>
 			<p><a href="/test#another">Root-relative link</a></p>
 		</div>;
 	}

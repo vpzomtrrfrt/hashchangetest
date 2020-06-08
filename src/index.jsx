@@ -20,6 +20,7 @@ class TestPage extends Component {
 		this.setState({hash: location.hash});
 
 		window.addEventListener("hashchange", () => {
+			console.log("got hashchange", location.hash);
 			this.setState({hash: location.hash});
 		});
 	}
